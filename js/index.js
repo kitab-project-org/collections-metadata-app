@@ -41,7 +41,7 @@ $(document).ready(function () {
 
         //"sDom": '<"wrapper"lfptip>',
         "sDom": "<'row rowpadding'B><'row'><'row'<'col-md-6'ilp><'col-md-6'f>r>t<'row'<'col-md-4'i>><'row'<'#colvis'>p>",
-        "autoWidth": true,
+        "autoWidth": false,
 
         "pageLength": 50,
         "colReorder": true,
@@ -74,38 +74,6 @@ $(document).ready(function () {
                   
                 }
             },
-
-            {
-                "data": 'URI',
-                "render": function (data, type, row) {
-                    if (type === 'rawExport') {
-                        return data;
-                    }
-                    return  checknull(data) ;
-                  
-                }
-            },
-
-            {
-                "data": 'author',
-                "render": function (data, type, row) {
-                    if (type === 'rawExport') {
-                        return data;
-                    }
-                    return  checknull(data) ;
-                  
-                }
-            },
-            {
-                "data": 'date',
-                "render": function (data, type, row) {
-                    if (type === 'rawExport') {
-                        return data;
-                    }
-                    return  checknull(data) ;
-                  
-                }
-            },
             {
                 "data": 'title',
                 "render": function (data, type, row) {
@@ -117,6 +85,31 @@ $(document).ready(function () {
                 }
             },
             {
+                "data": 'author',
+                "render": function (data, type, row) {
+                    if (type === 'rawExport') {
+                        return data;
+                    }
+                    return  checknull(data) ;
+                  
+                }
+            },
+
+            
+
+            
+            {
+                "data": 'date',
+                "render": function (data, type, row) {
+                    if (type === 'rawExport') {
+                        return data;
+                    }
+                    return  checknull(data) ;
+                  
+                }
+            },
+            
+            {
                 "data": 'ed_info',
                 "render": function (data, type, row) {
                    
@@ -124,14 +117,7 @@ $(document).ready(function () {
                   
                 }
             },
-            {
-                "data": 'link',
-                "render": function (data, type, row) {
-                   
-                    return  "<a href='" + checknull(data)+"' target='_blank'> Collection Link </a>" ;
-                  
-                }
-            },
+            
             {
                 "data": 'tokens',
                 "render": function (data, type, row) {
@@ -147,6 +133,24 @@ $(document).ready(function () {
                         return data;
                     }
                     return  checknull(data) ;
+                  
+                }
+            },
+            {
+                "data": 'URI',
+                "render": function (data, type, row) {
+                    if (type === 'rawExport') {
+                        return data;
+                    }
+                    return  checknull(data) ;
+                  
+                }
+            },
+            {
+                "data": 'link',
+                "render": function (data, type, row) {
+                   
+                    return  "<a href='" + checknull(data)+"' target='_blank'> Collection Link </a>" ;
                   
                 }
             }
@@ -165,8 +169,8 @@ $(document).ready(function () {
         table.columns().search('').draw();
       });
   
-      $('#AnnotationVettedFilter').on('click',function() {
-        table.search("mARkdown").draw();
+      $('#EShia').on('click',function() {
+        table.column(0).search("^EShia", true).draw();
       });
   
       $('#notYetAnnotatedFilter').on('click',function() {
